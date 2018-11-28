@@ -46,7 +46,10 @@ Log in by using
 
     git pull 
 
-# Step 5: Open app in browser
+# Step 6: Open app in browser
 
 - [http://159.65.122.94:3838/sample-apps/rmd/](http://159.65.122.94:3838/sample-apps/rmd/)
-    
+
+# Step 7: Develop interactive Rmd document
+
+- https://bookdown.org/yihui/rmarkdown/shiny-start.html
