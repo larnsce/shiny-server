@@ -1,0 +1,55 @@
+---
+title: "How to publish an app on Server"
+author:
+  - name: Lars Schoebitz 
+    url: http://www.lse.de/
+    affiliation: Environmental Data Scientist
+    affiliation_url: http://www.lse.de/
+date: "`r Sys.Date()`"
+output: html_document
+runtime: shiny 
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Background
+
+I am setting up a Shiny Server following the instructions [in this post](https://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/#user-libraries) by Dean Attali. In Step 8.2, it is recommended to use a git repository to populate the Shiny Server with Shiny apps. The purpose of this page is to document the steps to to do this.
+
+# Step 1
+
+- Write a new app on RStudio and store it in your shiny-server git repository that pushes to the repository setup in Step 8.2
+
+# Step 2: Push commits from desktop to remote repo on Github
+
+On your desktio CLI, type
+
+    git add .
+    git commi -m "Your message"
+    git push origin master
+    
+# Step 3: Log into your DigitalOcean droplet
+
+Log in by using
+
+    ssh root@123.456.1.1
+    su - user
+
+# Step 4: Navigate to shiny-server directory
+
+    cd /srv/shiny-server/
+
+# Step 5: Pull to grab changes that were made
+
+    git pull 
+
+# Step 6: Open app in browser
+
+- [http://159.65.122.94:3838/sample-apps/rmd/](http://159.65.122.94:3838/sample-apps/rmd/)
+
+# Step 7: Develop interactive Rmd document
+
+- https://bookdown.org/yihui/rmarkdown/shiny-start.html
