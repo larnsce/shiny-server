@@ -20,9 +20,11 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_4850/dat
 
 ```
 
-# Define UI for application that plots features of movies
+
 
 ```{r, echo=FALSE}
+
+# Define UI for application that plots features of movies
 
 ui <- fluidPage(
   
@@ -62,9 +64,9 @@ ui <- fluidPage(
 ```
 
 
-# Define server function required to create the scatterplot
-
 ```{r, echo=FALSE}
+
+# Define server function required to create the scatterplot
 
 server <- function(input, output) {
   
@@ -82,10 +84,10 @@ server <- function(input, output) {
 
 
 
+```{r echo=FALSE}
+
+
 # Create the Shiny app object
-
-
-```{r}
 
 shinyApp(ui = ui, server = server)
 
