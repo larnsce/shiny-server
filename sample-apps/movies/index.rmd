@@ -20,8 +20,6 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/production/course_4850/dat
 
 ```
 
-
-
 ```{r, echo=FALSE}
 
 # Define UI for application that plots features of movies
