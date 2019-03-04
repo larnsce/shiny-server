@@ -15,11 +15,28 @@ library(lubridate)
 # load data ---------------------------------------------------------------
 
 ## for local development
-# kpi_db <- read_csv(file = here::here("presentation/shiny/kpi_running/data/daily_updated_database.csv")) %>% unique()
+# kpi_db <- read_csv(file = here::here("kpi/data/daily_updated_database.csv")) %>% unique()
+
+## for SQL deployment
+
+con_mydb <- DBI::dbConnect(RMySQL::MySQL(),
+                           user = Sys.getenv("userid"),
+                           password = Sys.getenv("pwd1"), #rstudioapi::askForPassword("Database password"),
+                           host = '185.178.195.36',
+                           port = 3306,
+                           
+                           ## Selected database to be entered through terminal
+                           
+                           dbname = 'BMC_prod')
+
+kpi_db <- dbReadTable(conn = con_mydb, name = "BMC_KPI_DB")
+
+dbDisconnect(conn = con_mydb)
+
 
 ## for online deployment
 
-kpi_db <- read_csv(file = "data/daily_updated_database.csv")
+# kpi_db <- read_csv(file = "data/daily_updated_database.csv")
 
 ### filter out the firmware version
 
