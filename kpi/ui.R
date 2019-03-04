@@ -73,7 +73,7 @@ tab_plots <- tabItem(tabName = "plots",
                              
                              selectInput(inputId = "gi2", 
                                          label = "Pick a unit",
-                                         choices = c("GI#1" = "GI#1", "GI#2" = "GI#2", "GI#3" = "GI#3", "GI#4" = "GI#4", "GI#6" = "GI#6")))),
+                                         choices = c("GI#2 Narsapur" = "GI#2", "GI#3 Warangal" = "GI#3", "GI#4 Wai" = "GI#4")))),
                          
                          column(width = 4,
                                 
