@@ -38,6 +38,5 @@ vignettes/*.pdf
 # folders
 
 data/*
-kpi/data/*
 .Rproj.user
 *.Rproj
