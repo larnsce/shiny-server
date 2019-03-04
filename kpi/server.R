@@ -8,7 +8,9 @@ library(shiny)
 library(shinydashboard)
 library(tidyverse)
 library(ggalt)
-
+library(DBI)
+library(RMySQL)
+library(lubridate)
 
 # load data ---------------------------------------------------------------
 
@@ -17,7 +19,19 @@ library(ggalt)
 
 ## for online deployment
 
-kpi_db <- read_csv(file = "data/daily_updated_database.csv")
+# kpi_db <- read_csv(file = "data/daily_updated_database.csv")
+
+
+con_mydb <- DBI::dbConnect(RMySQL::MySQL(),
+                           user = Sys.getenv("userid"),
+                           password = Sys.getenv("pwd1"), #rstudioapi::askForPassword("Database password"),
+                           host = '185.178.195.36',
+                           port = 3306,
+                           dbname = 'BMC_prod')
+
+
+kpi_db <- dbReadTable(conn = con_mydb, name = "BMC_KPI_DB")
+
 
 ### filter out the firmware version
 
