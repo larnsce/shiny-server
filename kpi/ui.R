@@ -41,7 +41,15 @@ tab_dashboard <- tabItem(tabName = "dashboard",
                                 
                                 selectInput(inputId = "gi", 
                                             label = "Pick a unit",
-                                            choices = c("GI#1 Putnam" = "GI#1", "GI#2 Narsapur" = "GI#2", "GI#3 Warangal" = "GI#3", "GI#4 Wai" = "GI#4"))),
+                                            choices = c(
+                                                "GI#1 Putnam" = "GI#1", 
+                                                "GI#2 Narsapur" = "GI#2", 
+                                                "GI#3 Warangal" = "GI#3", 
+                                                "GI#4 Wai" = "GI#4",                                             
+                                                "GI#5 Putnam" = "GI#5",
+                                                "GI#7 Putnam" = "GI#7",
+                                                "GI Putnam" = "GI#Putnam"
+                                                ))),
                             box(title = "Overview plot", status = "success", solidHeader = TRUE,
                                 
                                 plotOutput("bar")),
@@ -73,7 +81,15 @@ tab_plots <- tabItem(tabName = "plots",
                              
                              selectInput(inputId = "gi2", 
                                          label = "Pick a unit",
-                                         choices = c("GI#1 Putnam" = "GI#1", "GI#2 Narsapur" = "GI#2", "GI#3 Warangal" = "GI#3", "GI#4 Wai" = "GI#4")))),
+                                         choices = c(
+                                             "GI#1 Putnam" = "GI#1",
+                                             "GI#2 Narsapur" = "GI#2", 
+                                             "GI#3 Warangal" = "GI#3", 
+                                             "GI#4 Wai" = "GI#4",
+                                             "GI#5 Putnam" = "GI#5",
+                                             "GI#7 Putnam" = "GI#7",
+                                             "GI Putnam" = "GI#Putnam"
+                                             )))),
                          
                          column(width = 4,
                                 
