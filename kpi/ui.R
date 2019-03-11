@@ -8,9 +8,8 @@ library(shinydashboard)
 
 # user interface ----------------------------------------------------------
 
-        
+
 header <- dashboardHeader(title = "Biomass Controls")
-        
         
 sidebar <- dashboardSidebar(
             
@@ -117,18 +116,25 @@ tab_plots <- tabItem(tabName = "plots",
 
 
 ## bring all items together
-tab_items <- tabItems(tab_dashboard, tab_plots)
+# tab_items <- tabItems(tabItem() tab_dashboard, tab_plots)
 
 
 # make body ---------------------------------------------------------------
 
-body <- dashboardBody(tab_items)
-
+body <- dashboardBody(
+    tags$head(includeScript("google-analytics.js")), 
+    tabItems(
+        tab_dashboard,
+        tab_plots
+    )
+    )
 
 # build the page ----------------------------------------------------------
 
 shinyUI(
-    dashboardPage(header, sidebar, body, skin = "green")
+    dashboardPage(
+        header, sidebar, body, skin = "green",
+        )
 )
-
-
+    
+    
