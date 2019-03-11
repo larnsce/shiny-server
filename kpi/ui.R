@@ -122,7 +122,7 @@ tab_plots <- tabItem(tabName = "plots",
 # make body ---------------------------------------------------------------
 
 body <- dashboardBody(
-    tags$head(includeScript("google-analytics.js")), 
+    #tags$head(includeScript("google-analytics.js")), 
     tabItems(
         tab_dashboard,
         tab_plots
