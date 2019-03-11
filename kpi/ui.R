@@ -116,13 +116,13 @@ tab_plots <- tabItem(tabName = "plots",
 
 
 ## bring all items together
-# tab_items <- tabItems(tabItem() tab_dashboard, tab_plots)
+# tab_items <- tabItems(tab_dashboard, tab_plots)
 
 
 # make body ---------------------------------------------------------------
 
 body <- dashboardBody(
-    #tags$head(includeScript("google-analytics.js")), 
+    tags$head(includeScript(here::here("google-analytics.js"))), 
     tabItems(
         tab_dashboard,
         tab_plots
