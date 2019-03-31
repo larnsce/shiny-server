@@ -4,11 +4,11 @@ library(shiny)
 
 ui <- fluidPage(
   
-  tags$h3("Biogenic Refinery CBS - Pricing and Capacity"),
+  tags$h2("Biogenic Refinery CBS - Pricing and Capacity"),
   
   tags$hr(),
   
-  tags$h4("Operations and people served"),
+  tags$h3("Operations"),
   
   sliderInput(inputId = "op_hours", 
               label = "Choose hours of operation per day:", 
@@ -38,7 +38,7 @@ ui <- fluidPage(
            
            tags$p(textOutput("cost_cap")),
            
-           tags$p("None of the above set of parameters in 'Operations and people served'  
+           tags$p("None of the above set of parameters in 'Operations'  
            has an impact on the cost per person and day. 
            Only decreasing the cost per hour or increasing the capacity of the Biogenic Refinery 
            could decrease the cost per person and day."),
@@ -53,11 +53,11 @@ ui <- fluidPage(
   tags$h3("Make adjustments"),
   
   sliderInput(inputId = "price_usd_hr",
-              label = "Adjust the price [USD/hr]",
+              label = "Adjust operating cost [USD/hr]",
               value = 50, min = 0, max = 100, step = 5),
   
   sliderInput(inputId = "op_capacity",
-              label = "Adjust the operating capacity [kg/hr]:",
+              label = "Adjust treatment capacity [kg/hr]:",
               value = 18, min = 0, max = 72, step = 9),
   
   tags$p(actionButton(inputId = "go",
