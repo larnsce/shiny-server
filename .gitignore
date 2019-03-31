@@ -35,8 +35,8 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 
-# folders
-
+# folders and files
+index.Rhtml
 data/*
 .Rproj.user
 *.Rproj
